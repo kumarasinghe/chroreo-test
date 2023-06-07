@@ -16,4 +16,9 @@ RUN npm install
 COPY . .
 
 EXPOSE 3000
+
+
+RUN useradd -u 8877 naveen
+USER naveen
+
 CMD [ "node", "index.js" ]
