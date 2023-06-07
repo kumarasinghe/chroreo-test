@@ -1,8 +1,8 @@
 FROM node:16
 
 # add non root user
-RUN useradd -u 15000 naveen
-USER naveen
+# RUN useradd -u 15000 naveen
+USER 15000
 
 # Create app directory
 WORKDIR /app
