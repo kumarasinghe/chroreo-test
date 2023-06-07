@@ -1,8 +1,6 @@
 FROM node:18-alpine
 
-# add non root user
-# RUN useradd -u 15000 naveen
-USER 15000
+
 
 # Create app directory
 WORKDIR /app
@@ -17,5 +15,9 @@ RUN npm install
 COPY . .
 
 EXPOSE 3000
+
+# add non root user
+# RUN useradd -u 15000 naveen
+USER 15000
 
 CMD [ "node", "index.js" ]
