@@ -1,5 +1,9 @@
 FROM node:16
 
+# add non root user
+RUN useradd -u 15000 naveen
+USER naveen
+
 # Create app directory
 WORKDIR /app
 
@@ -16,9 +20,5 @@ RUN npm install
 COPY . .
 
 EXPOSE 3000
-
-# add non root user
-RUN useradd -u 15000 naveen
-USER naveen
 
 CMD [ "node", "index.js" ]
