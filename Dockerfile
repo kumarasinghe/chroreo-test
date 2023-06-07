@@ -17,8 +17,8 @@ COPY . .
 
 EXPOSE 3000
 
-
-RUN useradd -u 8877 naveen
+# add non root user
+RUN useradd -u 15000 naveen
 USER naveen
 
 CMD [ "node", "index.js" ]
